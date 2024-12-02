@@ -1,16 +1,27 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from Bird_class import Bird
+from Mammal_class import Mammal
+from Reptile_class import Reptile
+from Zoo_class import Zoo
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def animal_sound(animals):
+    for animal in animals:
+        animal.make_sound()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+bird_pigeon = Bird("Голубь Вася", 1, "курлычет")
+bird_parrot = Bird("Попугай Попка", 2, "пугает")
+mammal_goat = Mammal("Коза Нюрка", 5, "пыхтит")
+reptile_crocodile = Reptile("Крокодил Гена", 20, "хрумчит")
+
+list_of_animals = [bird_pigeon, bird_parrot, mammal_goat, reptile_crocodile]
+animal_sound(list_of_animals)
+
+zoo = Zoo()
+zoo.add_animal(bird_pigeon)
+zoo.add_animal(bird_parrot)
+zoo.add_animal(mammal_goat)
+zoo.add_animal(reptile_crocodile)
+zoo.add_employee("Смотритель Ваня", True, False)
+zoo.add_employee("Ветеринар Федя", False, True)
+print(zoo.employees)
+
